@@ -1,43 +1,13 @@
 #include<stdio.h>
-
-int main()
-
-{
-
-            int x,y,a,b;
-
-            do
-
-            {
-
-            printf("Nhap a,b = ");
-
-            scanf("%d%d",&a,&b);
-            
-            }
-
-            while (a<=0|| b<=0);
-
-            x=a;
-
-            y=b;
-
-            while(a!=b)
-
-            {
-
-            if(a>b)
-
-            a-=b;
-
-            else
-
-            b-=a;
-
-            }
-
-            printf("Uoc chung lon nhat la %d",a);
-
-            printf("\nBoi chung nho nhat la %d",(x*y)/a);
-
+#include <algorithm>
+int main(){
+    int a = 5, b = 7, lcm;
+    int maxV = a*b;
+    for(int i = std::max(a, b); i <= maxV; i++){
+        if(i % a == 0 && i % b == 0){
+            lcm = i;
+            break;
+        }
+    }
+    printf("BCNN(%d, %d) = %d", a, b, lcm);
 }
